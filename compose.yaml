@@ -65,6 +65,12 @@ services:
     depends_on:
       haproxy:
         condition: service_healthy
+      minio-1:
+        condition: service_healthy
+      minio-2:
+        condition: service_healthy
+      minio-3:
+        condition: service_healthy
 
   minio-1:
     <<: *minio-common
